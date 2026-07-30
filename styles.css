@@ -1,5 +1,6 @@
 /* ===== PÁGINA PRINCIPAL (INDEX) ===== */
 
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -36,6 +37,7 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('fotos/foto1fondo.jpeg');
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -44,9 +46,9 @@ body {
 
 .instruction {
   font-family: 'Playfair Display', serif;
-  font-size: 28px;
+  font-size: 35px;
   font-weight: 400;
-  color: #495057;
+  color: #eef1f4;
   margin-bottom: 60px;
   opacity: 1;
   transition: all 0.5s ease;
@@ -60,14 +62,14 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: none;
+  transition: none; /* Removemos transition para que no interfiera con animaciones */
   position: relative;
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
+  outline: none; /* Quita el borde azul */
+  -webkit-tap-highlight-color: transparent; /* Quita highlight en móviles */
 }
 
 .flower:focus {
-  outline: none;
+  outline: none; /* Asegura que no hay outline al hacer focus */
 }
 
 .flower:active {
@@ -83,14 +85,45 @@ body {
   box-shadow: 0 4px 15px rgba(240, 98, 146, 0.3);
 }
 
-.petal1 { transform: rotate(0deg) translateY(-50%); animation-delay: 0.1s; }
-.petal2 { transform: rotate(45deg) translateY(-50%); animation-delay: 0.2s; }
-.petal3 { transform: rotate(90deg) translateY(-50%); animation-delay: 0.3s; }
-.petal4 { transform: rotate(135deg) translateY(-50%); animation-delay: 0.4s; }
-.petal5 { transform: rotate(180deg) translateY(-50%); animation-delay: 0.5s; }
-.petal6 { transform: rotate(225deg) translateY(-50%); animation-delay: 0.6s; }
-.petal7 { transform: rotate(270deg) translateY(-50%); animation-delay: 0.7s; }
-.petal8 { transform: rotate(315deg) translateY(-50%); animation-delay: 0.8s; }
+.petal1 {
+  transform: rotate(0deg) translateY(-50%);
+  animation-delay: 0.1s;
+}
+
+.petal2 {
+  transform: rotate(45deg) translateY(-50%);
+  animation-delay: 0.2s;
+}
+
+.petal3 {
+  transform: rotate(90deg) translateY(-50%);
+  animation-delay: 0.3s;
+}
+
+.petal4 {
+  transform: rotate(135deg) translateY(-50%);
+  animation-delay: 0.4s;
+}
+
+.petal5 {
+  transform: rotate(180deg) translateY(-50%);
+  animation-delay: 0.5s;
+}
+
+.petal6 {
+  transform: rotate(225deg) translateY(-50%);
+  animation-delay: 0.6s;
+}
+
+.petal7 {
+  transform: rotate(270deg) translateY(-50%);
+  animation-delay: 0.7s;
+}
+
+.petal8 {
+  transform: rotate(315deg) translateY(-50%);
+  animation-delay: 0.8s;
+}
 
 .center {
   position: absolute;
@@ -102,7 +135,7 @@ body {
   box-shadow: 0 2px 8px rgba(255, 204, 128, 0.4);
 }
 
-/* Loading styles */
+/* Professional Loading styles */
 .loading {
   position: absolute;
   bottom: 25%;
@@ -143,18 +176,35 @@ body {
 }
 
 @keyframes changeColor {
-  0% { background: linear-gradient(180deg, #fcdbdf, #fd688d); }
-  25% { background: linear-gradient(180deg, #fcd2e3, #fa6094); }
-  50% { background: linear-gradient(180deg, #fabefc, #c34ec7); }
-  75% { background: linear-gradient(180deg, #f7d6d6, #fd6a6a); }
-  100% { background: linear-gradient(180deg, #fcd3fc, #e844f7); }
+  0% {
+    background: linear-gradient(180deg, #fcdbdf, #fd688d);
+  }
+  25% {
+    background: linear-gradient(180deg, #fcd2e3, #fa6094);
+  }
+  50% {
+    background: linear-gradient(180deg, #fabefc, #c34ec7);
+  }
+  75% {
+    background: linear-gradient(180deg, #f7d6d6, #fd6a6a);
+  }
+  100% {
+    background: linear-gradient(180deg, #fcd3fc, #e844f7);
+  }
 }
 
 @keyframes rotateFlower {
-  0% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.5) rotate(360deg); }
-  100% { transform: scale(1) rotate(0deg); }
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(360deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
 }
+
 
 /* ===== PÁGINA DE MENSAJE ===== */
 
@@ -512,44 +562,9 @@ body {
     display: flex; /* Se muestra la página activa */
 }
 
-/* 1. CONFIGURACIÓN PARA ORDENADOR (Pantallas anchas) */
-#page-flower {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('fotos/foto1fondo.jpeg');
-    background-size: contain;        /* En ordenador se ve entera sin zoom */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #111111;       /* Fondo oscuro para los lados */
-}
 
-/* 2. CONFIGURACIÓN PARA MÓVIL (Pantallas de menos de 768px) */
-@media (max-width: 768px) {
-    #page-flower {
-        background-size: cover;      /* En móvil se adapta a toda la pantalla vertical */
-        background-position: center;
-    }
-}
-.instruction {
-    color: #ffffff !important;
-    font-size: 1.3rem;
-    font-weight: 600;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 0, 0, 0.8);
-}
 
-/* Fondo 2: Pantalla del Mensaje / Carta */
-#page-message {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('fotos/foto2fondo.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
-/* Fondo 3: Pantalla Final "Te Amo" */
-#page-love {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('fotos/fotofondo3.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 /* ===== ESTILO DEL CONTADOR CON EL MISMO DISEÑO ===== */
 #page-love .counter-box {
