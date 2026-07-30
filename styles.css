@@ -38,6 +38,8 @@ body {
   height: 100vh;
   display: flex;
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('fotos/foto1fondo.jpeg');
+  background-size: cover;
+  background-position: center;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -347,8 +349,11 @@ body {
   justify-content: center;
   align-items: center;
   background-image: url('fotos/fondo3.jpg');
-  background-size: cover;
-  background-position: center 20%;
+  background-size: 110% auto; 
+  
+  /* 2. Ahora el primer número (horizontal) SÍ responderá */
+  background-position: 100% 25%; 
+  
   background-repeat: no-repeat;
   position: relative;
   padding: 20px;
