@@ -163,14 +163,14 @@ body {
   letter-spacing: 1px;
 }
 
-.flower:hover .petal {
+.flower.animar-flor .petal {
   animation-name: changeColor;
   animation-duration: 8s;
   animation-direction: reverse;
   animation-iteration-count: infinite;
 }
 
-.flower:hover {
+.flower.animar-flor {
   animation-name: rotateFlower;
   animation-duration: 8s;
   animation-iteration-count: infinite;
@@ -206,7 +206,6 @@ body {
     transform: scale(1) rotate(0deg);
   }
 }
-
 
 /* ===== PÁGINA DE MENSAJE ===== */
 

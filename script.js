@@ -33,15 +33,14 @@ function toggleMusic() {
 const misFotos = [
     'fotos/foto1.jpg',
     'fotos/foto2.jpg',
-    'fotos/foto3.JPG',   // Importante: .JPG en mayúsculas como en tu carpeta
+    'fotos/foto3.JPG',   
     'fotos/foto4.jpg',
-    'fotos/foto5.jpeg',  // Importante: .jpeg con 'e'
-    'fotos/foto6.jpeg',  // Importante: .jpeg con 'e'
+    'fotos/foto5.jpeg',  
+    'fotos/foto6.jpeg',  
     'fotos/foto7.jpg',
     'fotos/foto8.jpeg',
     'fotos/foto9.jpeg',
     'fotos/foto10.jpg'
-
 ];
 
 let photoIndex = 0; // Llleva el control de cuál foto toca tirar
@@ -116,25 +115,7 @@ function actualizarContador() {
 // Se mantiene calculando cada segundo
 setInterval(actualizarContador, 1000);
 
-
 // ===== NAVEGACIÓN Y ACCIÓN DE LA FLOR =====
-function showLovePage() {
-    stopPhotoRain(); // Detenemos la lluvia al ir a la pantalla del corazón
-    showPage('page-love');
-    
-    loveI = 0;
-    const loveTypingText = document.getElementById('love-typing-text');
-    const loveCursor = document.getElementById('love-cursor');
-    const heartPath = document.getElementById('heart-path');
-    
-    if (loveTypingText) loveTypingText.innerHTML = '';
-    if (loveCursor) loveCursor.style.opacity = '1';
-    if (heartPath) heartPath.style.animation = 'none';
-    
-    setTimeout(() => {
-        loveTypeWriter();
-    }, 800);
-}
 
 function showMessage() {
     playAudio();
@@ -144,11 +125,19 @@ function showMessage() {
     const instruction = document.querySelector('.instruction');
     
     if (loading && flower && instruction) {
+        // Ocultamos el texto de instrucción
         instruction.style.opacity = '0';
-        loading.classList.add('show');
+        
+        // Desactivamos clics en la flor
         flower.style.pointerEvents = 'none';
         
-        // Espera 2.5s mientras sale "Cargando"
+        // Añadimos la clase para animar la flor con el clic
+        flower.classList.add('animar-flor');
+        
+        // Mostramos "Cargando..."
+        loading.classList.add('show');
+        
+        // Espera 2.5s mientras sale la animación y "Cargando"
         setTimeout(() => {
             showPage('page-message'); // Cambia a la pantalla del mensaje
             
@@ -161,8 +150,8 @@ function showMessage() {
                 if (cursor) cursor.style.opacity = '1';
 
                 startContinuousSparkles();
-                startPhotoRain(); // ¡Aquí empiezan a caer las fotos!
-                typeWriter();     // ¡Aquí empieza a escribirse el texto!
+                startPhotoRain(); 
+                typeWriter();     
             }, 300);
         }, 2500);
     }
@@ -191,6 +180,7 @@ function showPage(pageId) {
 
 // Función para ir a la página "Te amo"
 function showLovePage() {
+    stopPhotoRain(); // Detenemos la lluvia al ir a la pantalla del corazón
     showPage('page-love');
     
     // Resetear el contador de typing para "Te amo"
@@ -339,31 +329,3 @@ window.addEventListener('load', () => {
     // Asegurar que la página de la flor esté activa al inicio
     showPage('page-flower');
 });
-
-// ===== FUNCIONALIDAD DE LA PÁGINA PRINCIPAL =====
-
-// Función para mostrar loading y navegar
-function showMessage() {
-    const loading = document.getElementById('loading');
-    const flower = document.querySelector('.flower');
-    const instruction = document.querySelector('.instruction');
-    
-    if (loading && flower && instruction) {
-        // Hide instruction and show loading
-        instruction.style.opacity = '0';
-        loading.classList.add('show');
-        flower.style.pointerEvents = 'none'; // Disable clicks during loading
-        
-        // Navigate to message page after 2.5 seconds
-        setTimeout(() => {
-            showPage('page-message');
-            
-            // Iniciar lluvia de fotos y mensaje bonito al mismo tiempo
-            startPhotoRain();
-            setTimeout(() => {
-                startContinuousSparkles();
-                typeWriter();
-            }, 300);
-        }, 2500);
-    }
-}
