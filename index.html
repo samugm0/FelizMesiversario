@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Mesiversario Emma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio id="bg-music" src="musica/cancion.mp3" loop preload="auto"></audio>
+    <button id="music-btn" class="music-btn" onclick="toggleMusic()">🎵</button>
+    <div id="page-flower" class="page active">
+        <div class="container">
+            <div class="instruction">Presiona la flor</div>
+            <div class="flower" onclick="showMessage()">
+                <div class="petal petal1"></div>
+                <div class="petal petal2"></div>
+                <div class="petal petal3"></div>
+                <div class="petal petal4"></div>
+                <div class="petal petal5"></div>
+                <div class="petal petal6"></div>
+                <div class="petal petal7"></div>
+                <div class="petal petal8"></div>
+                <div class="center"></div>
+            </div>
+            <div id="loading" class="loading">
+                <div class="loading-text">Cargando</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA MENSAJE - TYPING EFFECT -->
+    <div id="page-message" class="page">
+        <div class="mensaje-container">
+            <div class="sparkles" id="sparkles"></div>
+            <div class="content">
+                <h1 id="typing-text" class="typing-text"></h1>
+                <span class="cursor" id="cursor">|</span>
+            </div>
+            <button class="back-btn" onclick="showLovePage()">← Pulsa aqui</button>
+        </div>
+    </div>
+
+    <!-- PÁGINA TE AMO - CORAZÓN DIBUJADO -->
+    <div id="page-love" class="page">
+    <div class="love-container">
+        
+        <div id="time-counter" class="counter-box">Cargando tiempo juntos...</div>
+
+        <div class="love-content">
+            <h1 id="love-typing-text" class="love-text"></h1>
+            <span class="love-cursor" id="love-cursor">|</span>
+            <svg class="heart-svg" width="100" height="100" viewBox="0 0 100 100">
+                <path id="heart-path" class="heart-path" d="M50,85 C20,65 5,40 5,25 C5,15 15,5 25,5 C35,5 45,15 50,25 C55,15 65,5 75,5 C85,5 95,15 95,25 C95,40 80,65 50,85 Z" />
+            </svg>
+        </div>
+
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
