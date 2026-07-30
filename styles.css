@@ -348,7 +348,7 @@ body {
   justify-content: center;
   align-items: center;
   background-image: url('fotos/fondo3.jpg');
-  background-size: 110% auto; 
+  background-size: 115% auto; 
   
   /* 2. Ahora el primer número (horizontal) SÍ responderá */
   background-position: 100% 25%; 
