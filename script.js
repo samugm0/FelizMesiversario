@@ -34,13 +34,24 @@ const misFotos = [
     'fotos/foto1.jpg',
     'fotos/foto2.jpg',
     'fotos/foto3.JPG',   
-    'fotos/foto4.jpg',
-    'fotos/foto5.jpeg',  
-    'fotos/foto6.jpeg',  
-    'fotos/foto7.jpg',
+    'fotos/foto4 (2).jpg',
+    'fotos/foto5.jpg',  
+    'fotos/foto6.jpg',  
+    'fotos/foto7 (2).jpg',
     'fotos/foto8.jpeg',
-    'fotos/foto9.jpeg',
-    'fotos/foto10.jpg'
+    'fotos/foto9.jpg',
+    'fotos/foto10.jpeg',
+    'fotos/foto11.jpg',
+    'fotos/foto12.jpg',
+    'fotos/foto13.jpg',
+    'fotos/foto14.jpeg',
+    'fotos/foto15 (2).jpeg',
+    'fotos/foto16.jpeg',
+    'fotos/foto17.jpeg',
+    'fotos/foto18.jpeg',
+    'fotos/foto19.jpeg',
+    'fotos/foto20.jpeg',
+    'fotos/foto21.jpeg'
 ];
 
 let photoIndex = 0; // Llleva el control de cuál foto toca tirar
@@ -67,7 +78,7 @@ function crearFotoCayendo() {
     img.style.left = (Math.random() * 75 + 5) + 'vw';
     
     // Caída suave de entre 6 y 8 segundos
-    const duration = Math.random() * 2 + 6;
+    const duration = Math.random() * 3 + 6;
     img.style.animationDuration = duration + 's';
 
     container.appendChild(img);

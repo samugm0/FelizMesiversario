@@ -361,7 +361,7 @@ body {
 /* ===== CONTADOR DE TIEMPO EN DIRECTO (CON ID PARA MAYOR PRIORIDAD) ===== */
 #page-love .counter-box {
   font-family: 'Playfair Display', serif;
-  color: #c2185b;
+  color: #fc0065;
   font-size: 20px;
   font-weight: 600;
   text-align: center;
@@ -379,7 +379,7 @@ body {
   
   /* Borde fino y redondeado */
   border: 1.5px solid rgba(251, 5, 103, 0.824);
-  border-radius: 30px;
+  border-radius: 20px;
   
   animation: fadeInScale 1.5s ease-out;
 }
@@ -570,26 +570,4 @@ body {
 
 
 
-/* ===== ESTILO DEL CONTADOR CON EL MISMO DISEÑO ===== */
-#page-love .counter-box {
-    color: #b8144b; /* El mismo tono rosado/vino que el texto principal */
-    font-size: 1.25rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 30px; /* Separación con el texto de abajo */
-    padding: 12px 24px;
-    background: rgba(255, 255, 255, 0.45); /* Píldora translúcida elegante */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1.5px solid rgba(184, 20, 75, 0.2);
-    border-radius: 30px;
-    box-shadow: 0 6px 20px rgba(184, 20, 75, 0.1);
-    display: inline-block;
-    width: fit-content;
-    max-width: 90%;
-}
 
-#page-love .counter-box b {
-    color: #d81b60;
-    font-size: 1.35rem;
-}
